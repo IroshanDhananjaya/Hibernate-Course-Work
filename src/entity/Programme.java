@@ -2,6 +2,8 @@ package entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Programme implements SuperEntity{
@@ -10,6 +12,9 @@ public class Programme implements SuperEntity{
     private String programme_name;
     private String duration;
     private String fee;
+    @OneToMany(mappedBy = "programme")
+    private
+    List<ProgrammeRejistration>details;
 
     public Programme() {
     }
@@ -61,5 +66,13 @@ public class Programme implements SuperEntity{
                 ", duration='" + duration + '\'' +
                 ", fee='" + fee + '\'' +
                 '}';
+    }
+
+    public List<ProgrammeRejistration> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<ProgrammeRejistration> details) {
+        this.details = details;
     }
 }

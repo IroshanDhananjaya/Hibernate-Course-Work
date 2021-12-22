@@ -12,7 +12,7 @@ public class Student implements SuperEntity {
     private String student_name;
     private String address;
     private String contact;
-    @OneToMany(mappedBy = "student_RId")
+    @OneToMany(mappedBy = "student")
     private
     List<ProgrammeRejistration>programmeRejistrationList;
 
