@@ -25,31 +25,31 @@
                   </Label>
                </children>
             </Pane>
-            <TextField layoutX="58.0" layoutY="57.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtSRejNumber" layoutX="58.0" layoutY="57.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
             <Label layoutX="64.0" layoutY="42.0" text="Student Rejistration Number">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <TextField layoutX="347.0" layoutY="58.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtStudentName" layoutX="347.0" layoutY="58.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
             <Label layoutX="353.0" layoutY="44.0" text="Student Name">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <TextField layoutX="637.0" layoutY="56.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtSAddress" layoutX="637.0" layoutY="56.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
             <Label layoutX="643.0" layoutY="42.0" text="Address">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <TextField layoutX="925.0" layoutY="55.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtContact" layoutX="925.0" layoutY="55.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
             <Label layoutX="931.0" layoutY="39.0" text="Contact">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <JFXButton layoutX="563.0" layoutY="125.0" prefHeight="42.0" prefWidth="308.0" style="-fx-background-color: #054ea1;" text="+ Add New Student" textFill="WHITE">
+            <JFXButton layoutX="563.0" layoutY="125.0" onAction="#addStudentOnAction" prefHeight="42.0" prefWidth="308.0" style="-fx-background-color: #054ea1;" text="+ Add New Student" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
