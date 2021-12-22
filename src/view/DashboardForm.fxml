@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboardContext" prefHeight="720.0" prefWidth="1366.0" style="-fx-background-color: #ffffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardFormController">
+   <children>
+      <ImageView fitHeight="80.0" fitWidth="248.0" layoutX="34.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/Sipsewana.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="24.0" layoutY="91.0" prefHeight="0.0" prefWidth="1316.0" />
+      <Label layoutX="1011.0" layoutY="31.0" text="2021-12-16">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="1247.0" layoutY="31.0" text="10:23">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="dashboardNavContext" layoutX="-3.0" layoutY="95.0" prefHeight="624.0" prefWidth="1366.0">
+         <children>
+            <AnchorPane layoutX="16.0" layoutY="9.0" prefHeight="236.0" prefWidth="1324.0" style="-fx-border-color: #000000; -fx-background-color: #ffffffff;">
+               <children>
+                  <Pane layoutX="57.0" layoutY="-16.0" prefHeight="38.0" prefWidth="139.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="13.0" layoutY="13.0" text="Student">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <TableView layoutX="15.0" layoutY="25.0" prefHeight="200.0" prefWidth="1107.0">
+                     <columns>
+                        <TableColumn prefWidth="162.0" text="Student ID" />
+                        <TableColumn prefWidth="287.0" text="Student Name" />
+                        <TableColumn prefWidth="254.0" text="Address" />
+                        <TableColumn prefWidth="153.0" text="Contact" />
+                        <TableColumn prefWidth="250.0" text="Date of registration" />
+                     </columns>
+                  </TableView>
+                  <JFXButton layoutX="1140.0" layoutY="68.0" onMouseClicked="#manageStudent_mouseCliked" prefHeight="118.0" prefWidth="174.0" style="-fx-background-color: #46d60d;" text="Manage Student" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="31.63" radius="15.692499999999999" spread="0.17" width="33.14" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="18.0" layoutY="268.0" prefHeight="270.0" prefWidth="1078.0" style="-fx-border-color: #000000; -fx-background-color: #ffffffff;">
+               <children>
+                  <Pane layoutX="52.0" layoutY="-14.0" prefHeight="38.0" prefWidth="274.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="9.0" layoutY="1.0" text="Training Program">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <TableView layoutX="15.0" layoutY="37.0" prefHeight="216.0" prefWidth="857.0">
+                     <columns>
+                        <TableColumn prefWidth="162.0" text="Program ID" />
+                        <TableColumn prefWidth="323.0" text="Program" />
+                        <TableColumn prefWidth="218.0" text="Duration" />
+                        <TableColumn prefWidth="153.0" text="Fee(LKR)" />
+                     </columns>
+                  </TableView>
+                  <JFXButton layoutX="888.0" layoutY="87.0" onMouseClicked="#manageProgram_mouseCliked" prefHeight="118.0" prefWidth="174.0" style="-fx-background-color: #46d60d;" text="Manage Program" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="31.63" radius="15.692499999999999" spread="0.17" width="33.14" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <JFXButton layoutX="1112.0" layoutY="311.0" onMouseClicked="#programDetails_MouseClicked" prefHeight="184.0" prefWidth="242.0" style="-fx-background-color: #0d0557;" text="View Programs Details" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="31.63" radius="15.692499999999999" spread="0.17" width="33.14" />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <JFXButton layoutX="696.0" layoutY="1.0" onMouseClicked="#home_mouseClicked" prefHeight="91.0" prefWidth="139.0" style="-fx-background-color: #a2a0a8;" text="HOME">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="840.0" layoutY="1.0" prefHeight="91.0" prefWidth="139.0" style="-fx-background-color: #a2a0a8;" text="Log Out">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <effect>
+      <DropShadow height="69.57" radius="38.08" width="84.75" />
+   </effect>
+</AnchorPane>

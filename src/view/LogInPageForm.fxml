@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginPageContext" prefHeight="720.0" prefWidth="1366.0" style="-fx-background-color: #ffffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogInPageFormController">
+   <children>
+      <ImageView fitHeight="198.0" fitWidth="808.0" layoutX="35.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/Sipsewana.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="310.0" fitWidth="343.0" layoutX="176.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/education.png" />
+         </image>
+      </ImageView>
+      <JFXTextField labelFloat="true" layoutX="755.0" layoutY="268.0" prefHeight="42.0" prefWidth="519.0" promptText="User Name" AnchorPane.leftAnchor="755.0" AnchorPane.rightAnchor="92.0" />
+      <JFXPasswordField labelFloat="true" layoutX="761.0" layoutY="389.0" prefHeight="40.0" prefWidth="511.0" promptText="Password" />
+      <JFXButton layoutX="823.0" layoutY="507.0" onMouseClicked="#logIn_mouseCliked" prefHeight="55.0" prefWidth="397.0" style="-fx-background-color: linear-gradient(to right, #051937, #002767, #003399, #003ccc, #0b40fd);;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="871.0" layoutY="86.0" text="LOG IN">
+         <font>
+            <Font name="DejaVu Serif Bold" size="70.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
