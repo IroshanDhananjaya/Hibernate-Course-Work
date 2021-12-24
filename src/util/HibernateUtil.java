@@ -2,6 +2,7 @@ package util;
 
 /*import entity.Customer;*/
 import entity.Programme;
+import entity.ProgrammeRejistration;
 import entity.Student;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -15,7 +16,7 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
         StandardServiceRegistry sReg = new StandardServiceRegistryBuilder().loadProperties("application.properties").build();
         Metadata mData = new MetadataSources(sReg)
-               .addAnnotatedClass(Student.class).addAnnotatedClass(Programme.class)
+               .addAnnotatedClass(Student.class).addAnnotatedClass(Programme.class).addAnnotatedClass(ProgrammeRejistration.class)
                 .getMetadataBuilder().build();
         return mData.getSessionFactoryBuilder().build();
     }

@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="studentManageContext" prefHeight="624.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StudentManageFormController">
    <children>
-      <AnchorPane layoutX="59.0" layoutY="68.0" prefHeight="175.0" prefWidth="1227.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-background-radius: 30px;">
+      <AnchorPane layoutX="59.0" layoutY="68.0" prefHeight="175.0" prefWidth="1297.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-background-radius: 30px;">
          <children>
             <Pane layoutX="25.0" layoutY="-18.0" prefHeight="38.0" prefWidth="255.0" style="-fx-background-color: #ffffff;">
                <children>
@@ -25,31 +25,31 @@
                   </Label>
                </children>
             </Pane>
-            <TextField fx:id="txtSRejNumber" layoutX="58.0" layoutY="57.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
+            <TextField fx:id="txtSRejNumber" layoutX="58.0" layoutY="57.0" prefHeight="26.0" prefWidth="222.0" style="-fx-background-radius: 10px;" />
             <Label layoutX="64.0" layoutY="42.0" text="Student Rejistration Number">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <TextField fx:id="txtStudentName" layoutX="347.0" layoutY="58.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
-            <Label layoutX="353.0" layoutY="44.0" text="Student Name">
+            <TextField fx:id="txtStudentName" layoutX="294.0" layoutY="56.0" prefHeight="26.0" prefWidth="236.0" style="-fx-background-radius: 10px;" />
+            <Label layoutX="300.0" layoutY="42.0" text="Student Name">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <TextField fx:id="txtSAddress" layoutX="637.0" layoutY="56.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
-            <Label layoutX="643.0" layoutY="42.0" text="Address">
+            <TextField fx:id="txtSAddress" layoutX="550.0" layoutY="53.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
+            <Label layoutX="556.0" layoutY="39.0" text="Address">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <TextField fx:id="txtContact" layoutX="925.0" layoutY="55.0" prefHeight="14.0" prefWidth="268.0" style="-fx-background-radius: 10px;" />
-            <Label layoutX="931.0" layoutY="39.0" text="Contact">
+            <TextField fx:id="txtContact" layoutX="838.0" layoutY="53.0" prefHeight="26.0" prefWidth="228.0" style="-fx-background-radius: 10px;" />
+            <Label layoutX="844.0" layoutY="37.0" text="Contact">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <JFXButton layoutX="563.0" layoutY="125.0" onAction="#addStudentOnAction" prefHeight="42.0" prefWidth="308.0" style="-fx-background-color: #054ea1;" text="+ Add New Student" textFill="WHITE">
+            <JFXButton layoutX="1020.0" layoutY="118.0" prefHeight="42.0" prefWidth="242.0" style="-fx-background-color: #ffa600;" text="Reset" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -60,7 +60,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="883.0" layoutY="123.0" prefHeight="42.0" prefWidth="308.0" style="-fx-background-color: #ffa600;" text="Reset" textFill="WHITE">
+            <JFXButton layoutX="766.0" layoutY="120.0" onAction="#addStudentOnAction" prefHeight="42.0" prefWidth="244.0" style="-fx-background-color: #054ea1;" text="+ Add New Student" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -71,6 +71,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <Label layoutX="1096.0" layoutY="35.0" text="Gender">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtGender" layoutX="1093.0" layoutY="51.0" prefHeight="26.0" prefWidth="164.0" style="-fx-background-radius: 10px;" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="64.0" layoutY="276.0" prefHeight="326.0" prefWidth="1271.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000; -fx-background-radius: 20px;">

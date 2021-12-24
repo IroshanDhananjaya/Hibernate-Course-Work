@@ -5,16 +5,22 @@ public class StudentDTO {
      private String student_name;
      private String address;
      private String contact;
+     private String gender;
 
     public StudentDTO() {
     }
 
-    public StudentDTO(String student_registerNumber, String student_name, String address, String contact) {
+    public StudentDTO(String student_registerNumber, String student_name, String address, String contact, String gender) {
         this.student_registerNumber = student_registerNumber;
         this.student_name = student_name;
         this.address = address;
         this.contact = contact;
+        this.setGender(gender);
     }
+
+
+
+
 
     public String getStudent_registerNumber() {
         return student_registerNumber;
@@ -46,5 +52,13 @@ public class StudentDTO {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

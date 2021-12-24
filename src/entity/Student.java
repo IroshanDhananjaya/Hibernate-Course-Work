@@ -2,8 +2,6 @@ package entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.List;
 
 @Entity
 public class Student implements SuperEntity {
@@ -12,20 +10,20 @@ public class Student implements SuperEntity {
     private String student_name;
     private String address;
     private String contact;
-    @OneToMany(mappedBy = "student")
-    private
-    List<ProgrammeRejistration>programmeRejistrationList;
-
+    private String gender;
 
     public Student() {
     }
 
-    public Student(String student_registerNumber, String student_name, String address, String contact) {
+    public Student(String student_registerNumber, String student_name, String address, String contact, String gender) {
         this.student_registerNumber = student_registerNumber;
         this.student_name = student_name;
         this.address = address;
         this.contact = contact;
+        this.setGender(gender);
     }
+
+
 
 
 
@@ -61,22 +59,11 @@ public class Student implements SuperEntity {
         this.contact = contact;
     }
 
-    public List<ProgrammeRejistration> getProgrammeRejistrationList() {
-        return programmeRejistrationList;
+    public String getGender() {
+        return gender;
     }
 
-    public void setProgrammeRejistrationList(List<ProgrammeRejistration> programmeRejistrationList) {
-        this.programmeRejistrationList = programmeRejistrationList;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "student_registerNumber='" + student_registerNumber + '\'' +
-                ", student_name='" + student_name + '\'' +
-                ", address='" + address + '\'' +
-                ", contact='" + contact + '\'' +
-                ", programmeRejistrationList=" + programmeRejistrationList +
-                '}';
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

@@ -15,12 +15,12 @@ public class ProgrammeRejistration implements SuperEntity {
     @ManyToOne
     @JoinColumn(name = "programme_Id",referencedColumnName = "programme_id")
     private Programme programme;
-    private Student rejisterDate;
+    private String rejisterDate;
 
     public ProgrammeRejistration() {
     }
 
-    public ProgrammeRejistration(String id, Student student, Programme programme, Student rejisterDate) {
+    public ProgrammeRejistration(String id, Student student, Programme programme, String rejisterDate) {
         this.id = id;
         this.student = student;
         this.programme = programme;
@@ -51,11 +51,11 @@ public class ProgrammeRejistration implements SuperEntity {
         this.programme = programme;
     }
 
-    public Student getRejisterDate() {
+    public String getRejisterDate() {
         return rejisterDate;
     }
 
-    public void setRejisterDate(Student rejisterDate) {
+    public void setRejisterDate(String rejisterDate) {
         this.rejisterDate = rejisterDate;
     }
 
