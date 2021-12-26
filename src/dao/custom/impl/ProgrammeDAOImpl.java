@@ -26,12 +26,25 @@ public class ProgrammeDAOImpl implements ProgrammeDAO {
 
     @Override
     public boolean update(Programme entity) throws Exception {
-        return false;
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
+        Session session=sessionFactory.openSession();
+        Transaction transaction=session.beginTransaction();
+        session.update(entity);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
     public boolean delete(String s) throws Exception {
-        return false;
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
+        Session session=sessionFactory.openSession();
+        Transaction transaction=session.beginTransaction();
+        Programme programme=session.get(Programme.class,s);
+        session.delete(programme);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
@@ -47,7 +60,15 @@ public class ProgrammeDAOImpl implements ProgrammeDAO {
 
     @Override
     public List<Programme> findAll() throws Exception {
-        return null;
+        SessionFactory sessionFactory=HibernateUtil.getSessionFactory();
+        Session session=sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        List<Programme> list = null;
+        Query programme = session.createQuery("from Programme ");
+        list = programme.list();
+        transaction.commit();
+        session.close();
+        return list;
     }
 
     @Override

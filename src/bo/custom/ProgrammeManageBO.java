@@ -11,5 +11,7 @@ public interface ProgrammeManageBO extends SuperBO {
     public boolean add(ProgrammeDTO programmeDTO) throws Exception;
     public Programme getProgrammeData(String id) throws Exception;
     public List getProgrammeids();
+    public boolean updateProgramme(ProgrammeDTO programmeDTO)throws Exception;
+    public boolean removeProgramme(String id) throws Exception;
 
 }

@@ -59,4 +59,24 @@ public class TraningProgramManageFormController {
         txtProgrammeUpdateDuration.setText(programme.getDuration());
         txtUpdateFee.setText(programme.getFee());
     }
+
+    public void updateOnAction(ActionEvent actionEvent) {
+        try {
+            if(programmeManageBO.updateProgramme(new ProgrammeDTO((String) cmbProgrammeID.getValue(),txtProgrammeUpdateName.getText(),txtProgrammeUpdateDuration.getText(),txtUpdateFee.getText()))){
+                new Alert(Alert.AlertType.CONFIRMATION, "Do you wanna Update it?").showAndWait();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
+        }
+    }
+
+    public void btnProgrammeDeleteOnAction(ActionEvent actionEvent) {
+        try {
+            if(programmeManageBO.removeProgramme((String) cmbProgrammeID.getValue())){
+                new Alert(Alert.AlertType.CONFIRMATION, "Do you wanna Delete it?").showAndWait();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
+        }
+    }
 }

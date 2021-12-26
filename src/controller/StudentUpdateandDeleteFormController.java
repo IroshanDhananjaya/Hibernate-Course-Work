@@ -2,9 +2,12 @@ package controller;
 
 import bo.BOFactory;
 import bo.custom.impl.StudentDeleteandUpdateBOImpl;
+import dto.StudentDTO;
 import entity.Student;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -57,5 +60,25 @@ public class StudentUpdateandDeleteFormController {
         txtAddress.setText(student.getAddress());
         txtContact.setText(student.getContact());
         txtGender.setText(student.getGender());
+    }
+
+    public void btnupdateOnAction(ActionEvent actionEvent) {
+        try {
+            if(studentDeleteandUpdateBO.updateStudentData(new StudentDTO((String)cmbStu_RejNumber.getValue(),txtStudentName.getText(),txtAddress.getText(),txtContact.getText(),txtGender.getText()))){
+                new Alert(Alert.AlertType.CONFIRMATION, "Do you wanna Update it?").showAndWait();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
+        }
+    }
+
+    public void btnRemoveOnAction(ActionEvent actionEvent) {
+        try {
+            if(studentDeleteandUpdateBO.deleteStudent((String) cmbStu_RejNumber.getValue())){
+                new Alert(Alert.AlertType.CONFIRMATION, "Do you wanna Delete it?").showAndWait();
+            }
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
+        }
     }
 }

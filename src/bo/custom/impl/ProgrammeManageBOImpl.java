@@ -25,4 +25,14 @@ public class ProgrammeManageBOImpl implements ProgrammeManageBO {
     public List getProgrammeids() {
        return programmeDAO.getProgrammeIDs();
     }
+
+    @Override
+    public boolean updateProgramme(ProgrammeDTO programmeDTO) throws Exception {
+        return programmeDAO.update(new Programme(programmeDTO.getProgramme_id(),programmeDTO.getProgramme_name(),programmeDTO.getDuration(),programmeDTO.getFee()));
+    }
+
+    @Override
+    public boolean removeProgramme(String id) throws Exception {
+        return programmeDAO.delete(id);
+    }
 }

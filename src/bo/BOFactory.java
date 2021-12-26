@@ -1,5 +1,6 @@
 package bo;
 
+import bo.custom.impl.DashboardBOImpl;
 import bo.custom.impl.ProgrammeManageBOImpl;
 import bo.custom.impl.StudentDeleteandUpdateBOImpl;
 import bo.custom.impl.StudentManageBOImpl;
@@ -24,13 +25,15 @@ public class BOFactory {
                 return (T) new ProgrammeManageBOImpl();
             case STUDENTDELETEANDUPDATE:
                 return (T) new StudentDeleteandUpdateBOImpl();
+            case DASHBOARD:
+                return (T)new DashboardBOImpl();
             default:
                 return null;
         }
     }
 
     public enum BoTypes {
-            MANAGESTUDENT,MANAGEPROGRAMME,STUDENTDELETEANDUPDATE
+            MANAGESTUDENT,MANAGEPROGRAMME,STUDENTDELETEANDUPDATE,DASHBOARD
      }
 
 }

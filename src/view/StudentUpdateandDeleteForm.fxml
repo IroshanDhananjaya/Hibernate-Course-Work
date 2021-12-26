@@ -50,7 +50,7 @@
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <JFXButton layoutX="830.0" layoutY="462.0" prefHeight="54.0" prefWidth="311.0" style="-fx-background-color: #46d60d;" text="Update Student Details" textFill="WHITE">
+            <JFXButton layoutX="830.0" layoutY="462.0" onAction="#btnupdateOnAction" prefHeight="54.0" prefWidth="311.0" style="-fx-background-color: #46d60d;" text="Update Student Details" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -84,7 +84,7 @@
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <JFXButton layoutX="825.0" layoutY="383.0" prefHeight="55.0" prefWidth="309.0" style="-fx-background-color: #ad0202;" text="Remove Student " textFill="WHITE">
+            <JFXButton layoutX="825.0" layoutY="383.0" onAction="#btnRemoveOnAction" prefHeight="55.0" prefWidth="309.0" style="-fx-background-color: #ad0202;" text="Remove Student " textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>

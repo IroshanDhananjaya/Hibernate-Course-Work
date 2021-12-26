@@ -44,16 +44,16 @@
                         </Label>
                      </children>
                   </Pane>
-                  <TableView layoutX="15.0" layoutY="25.0" prefHeight="200.0" prefWidth="1107.0">
+                  <TableView fx:id="tblStudent" layoutX="47.0" layoutY="47.0" prefHeight="164.0" prefWidth="1221.0">
                      <columns>
-                        <TableColumn prefWidth="162.0" text="Student ID" />
-                        <TableColumn prefWidth="287.0" text="Student Name" />
-                        <TableColumn prefWidth="254.0" text="Address" />
-                        <TableColumn prefWidth="153.0" text="Contact" />
-                        <TableColumn prefWidth="250.0" text="Date of registration" />
+                        <TableColumn fx:id="colSRegID" prefWidth="159.6666717529297" text="Student Reg ID" />
+                        <TableColumn fx:id="colStudentName" prefWidth="251.99998474121094" text="Student Name" />
+                        <TableColumn fx:id="colAddress" prefWidth="297.0" text="Address" />
+                        <TableColumn fx:id="colGender" prefWidth="241.0" text="Gender" />
+                        <TableColumn fx:id="colContact" prefWidth="270.0" text="Contact" />
                      </columns>
                   </TableView>
-                  <JFXButton layoutX="1140.0" layoutY="68.0" onMouseClicked="#manageStudent_mouseCliked" prefHeight="118.0" prefWidth="174.0" style="-fx-background-color: #46d60d;" text="Manage Student" textFill="WHITE">
+                  <JFXButton layoutX="987.0" layoutY="2.0" onMouseClicked="#manageStudent_mouseCliked" prefHeight="38.0" prefWidth="307.0" style="-fx-background-color: #46d60d;" text="Manage Student &amp; Rejistration" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -77,12 +77,12 @@
                         </Label>
                      </children>
                   </Pane>
-                  <TableView layoutX="15.0" layoutY="37.0" prefHeight="216.0" prefWidth="857.0">
+                  <TableView fx:id="tblTraninngProgramme" layoutX="15.0" layoutY="37.0" prefHeight="216.0" prefWidth="857.0">
                      <columns>
-                        <TableColumn prefWidth="162.0" text="Program ID" />
-                        <TableColumn prefWidth="323.0" text="Program" />
-                        <TableColumn prefWidth="218.0" text="Duration" />
-                        <TableColumn prefWidth="153.0" text="Fee(LKR)" />
+                        <TableColumn fx:id="colProgrammeID" prefWidth="162.0" text="Program ID" />
+                        <TableColumn fx:id="colProgrammeName" prefWidth="323.0" text="Program" />
+                        <TableColumn fx:id="colDuration" prefWidth="218.0" text="Duration" />
+                        <TableColumn fx:id="colFee" prefWidth="153.0" text="Fee(LKR)" />
                      </columns>
                   </TableView>
                   <JFXButton layoutX="888.0" layoutY="87.0" onMouseClicked="#manageProgram_mouseCliked" prefHeight="118.0" prefWidth="174.0" style="-fx-background-color: #46d60d;" text="Manage Program" textFill="WHITE">

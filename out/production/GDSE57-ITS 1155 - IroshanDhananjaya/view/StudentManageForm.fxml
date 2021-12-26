@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -95,33 +96,33 @@
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <Label layoutX="317.0" layoutY="105.0" text="Name :-">
+            <Label layoutX="295.0" layoutY="91.0" text="Name :-">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <Label layoutX="302.0" layoutY="136.0" text="Address :-">
+            <Label layoutX="280.0" layoutY="122.0" text="Address :-">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <ComboBox layoutX="40.0" layoutY="46.0" prefHeight="26.0" prefWidth="268.0" style="-fx-background-radius: 20px;" />
-            <Label layoutX="393.0" layoutY="105.0" text="Name ">
+            <ComboBox fx:id="cmb_StudentID" layoutX="40.0" layoutY="46.0" prefHeight="26.0" prefWidth="268.0" style="-fx-background-radius: 20px;" />
+            <Label fx:id="lblSName" layoutX="371.0" layoutY="91.0" text="Name ">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <Label layoutX="394.0" layoutY="137.0" text="Address">
+            <Label fx:id="lblAddress" layoutX="372.0" layoutY="123.0" text="Address">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <Label layoutX="305.0" layoutY="168.0" text="Contact :-">
+            <Label layoutX="283.0" layoutY="154.0" text="Contact :-">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <Label layoutX="393.0" layoutY="168.0" text="Contact">
+            <Label fx:id="lblContact" layoutX="371.0" layoutY="154.0" text="Contact">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
@@ -135,24 +136,24 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TableView layoutX="290.0" layoutY="193.0" prefHeight="114.0" prefWidth="352.0">
+            <TableView layoutX="284.0" layoutY="216.0" prefHeight="101.0" prefWidth="349.0">
                <columns>
-                  <TableColumn prefWidth="127.0" text="Programme ID" />
-                  <TableColumn prefWidth="252.0" text="Programme Name" />
+                  <TableColumn prefWidth="123.0" text="Programme ID" />
+                  <TableColumn prefWidth="256.0" text="Programme Name" />
                </columns>
             </TableView>
-            <Label layoutX="824.0" layoutY="39.0" text="Select program">
+            <Label layoutX="705.0" layoutY="39.0" text="Rejister Student for new Tranning Programme :-">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
             <ComboBox layoutX="815.0" layoutY="56.0" prefHeight="26.0" prefWidth="268.0" style="-fx-background-radius: 20px;" />
-            <Label layoutX="900.0" layoutY="98.0" text="Program Name">
+            <Label layoutX="1102.0" layoutY="63.0" text="Program Name">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <JFXButton layoutX="897.0" layoutY="201.0" prefHeight="58.0" prefWidth="308.0" style="-fx-background-color: #088523;" text="Rejister" textFill="WHITE">
+            <JFXButton layoutX="950.0" layoutY="201.0" prefHeight="58.0" prefWidth="255.0" style="-fx-background-color: #088523;" text="Rejister" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -163,6 +164,22 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <JFXDatePicker layoutX="882.0" layoutY="106.0" />
+            <Label layoutX="765.0" layoutY="119.0" text="Rejister Date">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="284.0" layoutY="190.0" text="Gender">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblGender" layoutX="372.0" layoutY="190.0" text="Gender">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <JFXButton layoutX="977.0" layoutY="17.0" onMouseClicked="#studentUpdateandDelete_MouseCliked" prefHeight="42.0" prefWidth="308.0" style="-fx-background-color: #27069c;" text="Update &amp; Delete Student" textFill="WHITE">
