@@ -9,6 +9,10 @@ public class ProgrammeDTO {
     public ProgrammeDTO() {
     }
 
+    public ProgrammeDTO(String programme_id) {
+        this.programme_id = programme_id;
+    }
+
     public ProgrammeDTO(String programme_id, String programme_name, String duration, String fee) {
         this.programme_id = programme_id;
         this.programme_name = programme_name;
@@ -46,5 +50,15 @@ public class ProgrammeDTO {
 
     public void setFee(String fee) {
         this.fee = fee;
+    }
+
+    @Override
+    public String toString() {
+        return "ProgrammeDTO{" +
+                "programme_id='" + programme_id + '\'' +
+                ", programme_name='" + programme_name + '\'' +
+                ", duration='" + duration + '\'' +
+                ", fee='" + fee + '\'' +
+                '}';
     }
 }

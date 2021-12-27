@@ -1,5 +1,6 @@
 package entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -12,9 +13,8 @@ public class Programme implements SuperEntity{
     private String programme_name;
     private String duration;
     private String fee;
-    @OneToMany(mappedBy = "programme")
-    private
-    List<ProgrammeRejistration>details;
+    @OneToMany(mappedBy = "programme",cascade = CascadeType.ALL)
+    private List<ProgrammeRejistration>details;
 
     public Programme() {
     }
@@ -58,6 +58,13 @@ public class Programme implements SuperEntity{
         this.fee = fee;
     }
 
+    public List<ProgrammeRejistration> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<ProgrammeRejistration> details) {
+        this.details = details;
+    }
     @Override
     public String toString() {
         return "Programme{" +
@@ -68,11 +75,5 @@ public class Programme implements SuperEntity{
                 '}';
     }
 
-    public List<ProgrammeRejistration> getDetails() {
-        return details;
-    }
 
-    public void setDetails(List<ProgrammeRejistration> details) {
-        this.details = details;
-    }
 }

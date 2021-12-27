@@ -1,30 +1,25 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class ProgrammeRejistration implements SuperEntity {
     @Id
-    private String id;
-    @ManyToOne
-    @JoinColumn(name = "student_RId",referencedColumnName = "student_registerNumber")
-    private Student student;
-    @ManyToOne
-    @JoinColumn(name = "programme_Id",referencedColumnName = "programme_id")
-    private Programme programme;
-    private String rejisterDate;
+  private String id;
+  private String date;
+  @ManyToOne(fetch = FetchType.EAGER)
+  private Student student;
+  @ManyToOne(fetch = FetchType.EAGER)
+  private Programme programme;
 
     public ProgrammeRejistration() {
     }
 
-    public ProgrammeRejistration(String id, Student student, Programme programme, String rejisterDate) {
+    public ProgrammeRejistration(String id, String date, Student student, Programme programme) {
         this.id = id;
+        this.date = date;
         this.student = student;
         this.programme = programme;
-        this.rejisterDate = rejisterDate;
     }
 
     public String getId() {
@@ -33,6 +28,14 @@ public class ProgrammeRejistration implements SuperEntity {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public Student getStudent() {
@@ -49,23 +52,5 @@ public class ProgrammeRejistration implements SuperEntity {
 
     public void setProgramme(Programme programme) {
         this.programme = programme;
-    }
-
-    public String getRejisterDate() {
-        return rejisterDate;
-    }
-
-    public void setRejisterDate(String rejisterDate) {
-        this.rejisterDate = rejisterDate;
-    }
-
-    @Override
-    public String toString() {
-        return "ProgrammeRejistration{" +
-                "id='" + id + '\'' +
-                ", student=" + student +
-                ", programme=" + programme +
-                ", rejisterDate=" + rejisterDate +
-                '}';
     }
 }

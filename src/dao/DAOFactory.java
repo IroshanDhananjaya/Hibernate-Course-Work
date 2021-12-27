@@ -1,6 +1,7 @@
 package dao;
 
 import dao.custom.impl.ProgrammeDAOImpl;
+import dao.custom.impl.ProgrammeRejistrationDAOImpl;
 import dao.custom.impl.StudentDAOImpl;
 
 public class DAOFactory {
@@ -22,7 +23,7 @@ public class DAOFactory {
             case PROGRAMME:
                 return (T) new ProgrammeDAOImpl();
             case PROGRAMMEREJISTRATION:
-                return (T) new ProgrammeDAOImpl();
+                return (T) new ProgrammeRejistrationDAOImpl();
             default:
                 return null;
         }

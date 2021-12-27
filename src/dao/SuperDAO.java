@@ -1,6 +1,7 @@
 package dao;
 
 import entity.SuperEntity;
+import org.hibernate.Session;
 
 import java.util.List;
 
@@ -14,4 +15,5 @@ public interface SuperDAO <Entity extends SuperEntity,ID> {
     public Entity find(ID id) throws Exception;
 
     public List<Entity> findAll() throws Exception;
+
 }

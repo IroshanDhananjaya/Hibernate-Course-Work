@@ -1,9 +1,6 @@
 package bo;
 
-import bo.custom.impl.DashboardBOImpl;
-import bo.custom.impl.ProgrammeManageBOImpl;
-import bo.custom.impl.StudentDeleteandUpdateBOImpl;
-import bo.custom.impl.StudentManageBOImpl;
+import bo.custom.impl.*;
 
 public class BOFactory {
         private static BOFactory boFactory;

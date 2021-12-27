@@ -10,6 +10,10 @@ public class StudentDTO {
     public StudentDTO() {
     }
 
+    public StudentDTO(String student_registerNumber) {
+        this.student_registerNumber = student_registerNumber;
+    }
+
     public StudentDTO(String student_registerNumber, String student_name, String address, String contact, String gender) {
         this.student_registerNumber = student_registerNumber;
         this.student_name = student_name;
@@ -60,5 +64,16 @@ public class StudentDTO {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentDTO{" +
+                "student_registerNumber='" + student_registerNumber + '\'' +
+                ", student_name='" + student_name + '\'' +
+                ", address='" + address + '\'' +
+                ", contact='" + contact + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
     }
 }
