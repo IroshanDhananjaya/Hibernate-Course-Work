@@ -5,37 +5,42 @@ import javax.persistence.*;
 @Entity
 public class ProgrammeRejistration implements SuperEntity {
     @Id
-  private String id;
-  private String date;
-  @ManyToOne(fetch = FetchType.EAGER)
-  private Student student;
-  @ManyToOne(fetch = FetchType.EAGER)
-  private Programme programme;
+    private
+    int regNumber;
+    private String regDate;
+    @ManyToOne
+    @JoinColumn(name = "student_registerNumber",referencedColumnName = "student_registerNumber")
+    private
+    Student student;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "programme_id",referencedColumnName = "programme_id")
+    private
+    Programme programme;
 
     public ProgrammeRejistration() {
     }
 
-    public ProgrammeRejistration(String id, String date, Student student, Programme programme) {
-        this.id = id;
-        this.date = date;
+    public ProgrammeRejistration(int regNumber, String regDate, Student student, Programme programme) {
+        this.regNumber = regNumber;
+        this.regDate = regDate;
         this.student = student;
         this.programme = programme;
     }
 
-    public String getId() {
-        return id;
+    public int getRegNumber() {
+        return regNumber;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setRegNumber(int regNumber) {
+        this.regNumber = regNumber;
     }
 
-    public String getDate() {
-        return date;
+    public String getRegDate() {
+        return regDate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setRegDate(String regDate) {
+        this.regDate = regDate;
     }
 
     public Student getStudent() {

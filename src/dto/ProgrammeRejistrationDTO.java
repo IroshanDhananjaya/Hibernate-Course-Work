@@ -1,34 +1,28 @@
 package dto;
 
-import entity.Programme;
-import entity.Student;
-
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-
 
 public class ProgrammeRejistrationDTO {
-     private String id;
+     private int regId;
      private String date;
-     private StudentDTO studentDTO;
-     private ProgrammeDTO programmeDTO;
+     private String studentId;
+     private String programmeId;
 
     public ProgrammeRejistrationDTO() {
     }
 
-    public ProgrammeRejistrationDTO(String id, String date, StudentDTO studentDTO, ProgrammeDTO programmeDTO) {
-        this.id = id;
+    public ProgrammeRejistrationDTO(int regId, String date, String studentDTO, String programmeDTO) {
+        this.regId = regId;
         this.date = date;
-        this.studentDTO = studentDTO;
-        this.programmeDTO= programmeDTO;
+        this.studentId = studentDTO;
+        this.programmeId = programmeDTO;
     }
 
-    public String getId() {
-        return id;
+    public int getRegId() {
+        return regId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setRegId(int regId) {
+        this.regId = regId;
     }
 
     public String getDate() {
@@ -39,29 +33,19 @@ public class ProgrammeRejistrationDTO {
         this.date = date;
     }
 
-    public StudentDTO getStudentDTO() {
-        return studentDTO;
+    public String getStudentId() {
+        return studentId;
     }
 
-    public void setStudent(StudentDTO student) {
-        this.studentDTO = student;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
-    public ProgrammeDTO getProgramme() {
-        return programmeDTO;
+    public String getProgrammeId() {
+        return programmeId;
     }
 
-    public void setProgramme(ProgrammeDTO programme) {
-        this.programmeDTO = programme;
-    }
-
-    @Override
-    public String toString() {
-        return "ProgrammeRejistrationDTO{" +
-                "id='" + id + '\'' +
-                ", date='" + date + '\'' +
-                ", student=" + studentDTO +
-                ", programme=" + programmeDTO +
-                '}';
+    public void setProgrammeId(String programmeId) {
+        this.programmeId = programmeId;
     }
 }

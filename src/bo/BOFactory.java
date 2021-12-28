@@ -24,13 +24,15 @@ public class BOFactory {
                 return (T) new StudentDeleteandUpdateBOImpl();
             case DASHBOARD:
                 return (T)new DashboardBOImpl();
+            case PROGRAMMEDETAILS:
+                return (T) new ProgrammeDetailsBOImpl();
             default:
                 return null;
         }
     }
 
     public enum BoTypes {
-            MANAGESTUDENT,MANAGEPROGRAMME,STUDENTDELETEANDUPDATE,DASHBOARD
+            MANAGESTUDENT,MANAGEPROGRAMME,STUDENTDELETEANDUPDATE,DASHBOARD,PROGRAMMEDETAILS;
      }
 
 }

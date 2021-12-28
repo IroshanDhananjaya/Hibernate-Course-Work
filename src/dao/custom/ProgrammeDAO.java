@@ -1,11 +1,11 @@
 package dao.custom;
 
-import dao.SuperDAO;
+import dao.CrudDAO;
 import entity.Programme;
 
 import java.util.List;
 
-public interface ProgrammeDAO extends SuperDAO<Programme,String> {
+public interface ProgrammeDAO extends CrudDAO<Programme,String> {
     public List getProgrammeIDs();
 
 }

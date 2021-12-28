@@ -15,6 +15,6 @@ public interface StudentManageBO extends SuperBO {
     public List getProgrammeids();
     public Programme getProgrammeData(String id) throws Exception;
     public boolean addRejistration(ProgrammeRejistrationDTO programmeRejistrationDTO) throws Exception;
-    public String getNewOrderId() throws Exception;
+    public int getNewOrderId() throws Exception;
 
 }

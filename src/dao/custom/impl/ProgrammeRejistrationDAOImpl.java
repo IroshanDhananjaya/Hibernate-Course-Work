@@ -5,6 +5,7 @@ import entity.ProgrammeRejistration;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 import util.HibernateUtil;
 
 import java.util.List;
@@ -42,12 +43,13 @@ public class ProgrammeRejistrationDAOImpl implements ProgrammeRejistrationDAO {
     }
 
     @Override
-    public String getLastOrderID() throws Exception {
+    public int getLastOrderID() throws Exception {
         SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
         Session session=sessionFactory.openSession();
         Transaction transaction=session.beginTransaction();
-        List list=session.createQuery("SELECT id FROM ProgrammeRejistration ORDER BY id desc ").setMaxResults(1).list();
-        session.close();
-        return (list.size() >0)?(String)list.get(0):null;
+        NativeQuery query=session.createSQLQuery("SELECT regNumber FROM ProgrammeRejistration ORDER BY regNumber DESC LIMIT 1");
+        int rst= (int) query.uniqueResult();
+        transaction.commit();
+        return rst;
     }
 }

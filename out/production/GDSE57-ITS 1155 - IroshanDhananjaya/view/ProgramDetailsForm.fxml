@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="624.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProgramDetailsFormController">
+<AnchorPane prefHeight="624.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProgramDetailsFormController">
    <children>
-      <AnchorPane layoutX="41.0" layoutY="34.0" prefHeight="556.0" prefWidth="1290.0" style="-fx-background-color: #ffffffff; -fx-border-color: #000000;" />
+      <AnchorPane layoutX="20.0" layoutY="24.0" prefHeight="584.0" prefWidth="1328.0" style="-fx-background-color: #ffffffff; -fx-border-color: #000000;">
+         <children>
+            <Pane layoutX="49.0" layoutY="-8.0" prefHeight="38.0" prefWidth="332.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Label layoutX="19.0" layoutY="-5.0" text="Programme Details">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TableView fx:id="tblProgramDetails" layoutX="28.0" layoutY="192.0" prefHeight="362.0" prefWidth="894.0">
+              <columns>
+                <TableColumn fx:id="colStudentID" prefWidth="285.0" text="Student ID" />
+                <TableColumn fx:id="colStudentName" prefWidth="255.0" text="Student Name" />
+                  <TableColumn fx:id="colRejisterDate" prefWidth="350.0" text="Rejister Date" />
+              </columns>
+            </TableView>
+            <JFXComboBox fx:id="cmbPID" layoutX="608.0" layoutY="79.0" prefHeight="48.0" prefWidth="402.0" />
+         </children></AnchorPane>
    </children>
 </AnchorPane>

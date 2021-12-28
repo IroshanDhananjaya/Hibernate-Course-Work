@@ -20,6 +20,10 @@ public class Student implements SuperEntity {
     public Student() {
     }
 
+    public Student(String student_registerNumber) {
+        this.student_registerNumber = student_registerNumber;
+    }
+
     public Student(String student_registerNumber, String student_name, String address, String contact, String gender) {
         this.student_registerNumber = student_registerNumber;
         this.student_name = student_name;

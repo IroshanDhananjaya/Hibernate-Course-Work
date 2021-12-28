@@ -46,6 +46,7 @@ public class StudentManageFormController {
     public void initialize(){
         loadStudentIds();
         loadProgrammeIds();
+        generateRejFormId();
 
 
         cmb_StudentID.getSelectionModel().selectedItemProperty().
@@ -115,22 +116,20 @@ public class StudentManageFormController {
 
     public void rejisterOnAction(ActionEvent actionEvent) throws Exception {
 
-        StudentDTO studentDTO=new StudentDTO(cmb_StudentID.getValue().toString());
 
-        ProgrammeDTO programmeDTO=new ProgrammeDTO(cmbCourseID.getValue().toString());
-
-        if(studentManageBO.addRejistration(new ProgrammeRejistrationDTO(lblrejFormNum.getText(),date.getValue().toString(),studentDTO,programmeDTO))){
+        if(studentManageBO.addRejistration(new ProgrammeRejistrationDTO(Integer.parseInt(lblrejFormNum.getText()),date.getValue().toString(),(String) cmb_StudentID.getValue(), (String) cmbCourseID.getValue()))){
+            generateRejFormId();
         new Alert(Alert.AlertType.CONFIRMATION, "Do you wanna Save it?").showAndWait();
 
         } else{
         new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
         }
     }
-  /*  private void generateRejFormId(){
+    private void generateRejFormId(){
         try {
-            lblrejFormNum.setText(studentManageBO.getNewOrderId());
+            lblrejFormNum.setText(String.valueOf(studentManageBO.getNewOrderId()));
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 }
