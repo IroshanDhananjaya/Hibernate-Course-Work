@@ -79,4 +79,11 @@ public class TraningProgramManageFormController {
             new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
         }
     }
+
+    public void resetOnAction(ActionEvent actionEvent) {
+        txtProgrammeID.clear();
+        txtProgrammeName.clear();
+        txtDuration.clear();
+        txtFee.clear();
+    }
 }

@@ -7,8 +7,10 @@ import com.jfoenix.controls.JFXComboBox;
 import dto.CustomDTO;
 import dto.StudentDTO;
 import entity.CustomEntity;
+import entity.Programme;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -24,8 +26,11 @@ public class ProgramDetailsFormController {
     public TableColumn colStudentName;
     public TableColumn colRejisterDate;
     public JFXComboBox cmbPID;
+    public Label lblProgrammeName;
+    public Label lblProgrammeDuration;
+    public Label lblFee;
 
-    ProgrammeDetailsBOImpl programmeDetailsBO= BOFactory.getBOFactory().getBO(BOFactory.BoTypes.PROGRAMMEDETAILS);
+    ProgrammeDetailsBOImpl programmeDetailsBO = BOFactory.getBOFactory().getBO(BOFactory.BoTypes.PROGRAMMEDETAILS);
 
     public void initialize(){
         loadProgrammeIds();
@@ -33,6 +38,7 @@ public class ProgramDetailsFormController {
         cmbPID.getSelectionModel().selectedItemProperty().
                 addListener((observable, oldValue, newValue) -> {
                     try {
+                        setProgrammeData((String)newValue);
                        setProgrammeDetailsToTable((String) newValue);
                     } catch (SQLException throwables) {
                         throwables.printStackTrace();
@@ -63,5 +69,13 @@ public class ProgramDetailsFormController {
     }
     public void loadProgrammeIds() {
         cmbPID.getItems().addAll(programmeDetailsBO.getProgrammeids());
+    }
+
+    public void setProgrammeData(String id) throws Exception {
+        Programme programme=programmeDetailsBO.getProgrammeData(id);
+        lblProgrammeName.setText(programme.getProgramme_name());
+        lblProgrammeDuration.setText(programme.getDuration());
+        lblFee.setText(programme.getFee());
+
     }
 }

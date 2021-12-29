@@ -132,4 +132,12 @@ public class StudentManageFormController {
             e.printStackTrace();
         }
     }
+
+    public void resetOnAction(ActionEvent actionEvent) {
+        txtSRejNumber.clear();
+        txtContact.clear();
+        txtGender.clear();
+        txtStudentName.clear();
+        txtSAddress.clear();
+    }
 }

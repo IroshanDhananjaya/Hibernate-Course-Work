@@ -22,8 +22,8 @@
             <Image url="@../assets/images/education.png" />
          </image>
       </ImageView>
-      <JFXTextField labelFloat="true" layoutX="755.0" layoutY="268.0" prefHeight="42.0" prefWidth="519.0" promptText="User Name" AnchorPane.leftAnchor="755.0" AnchorPane.rightAnchor="92.0" />
-      <JFXPasswordField labelFloat="true" layoutX="761.0" layoutY="389.0" prefHeight="40.0" prefWidth="511.0" promptText="Password" />
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="755.0" layoutY="268.0" prefHeight="42.0" prefWidth="519.0" promptText="User Name" AnchorPane.leftAnchor="755.0" AnchorPane.rightAnchor="92.0" />
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="761.0" layoutY="389.0" prefHeight="40.0" prefWidth="511.0" promptText="Password" />
       <JFXButton layoutX="823.0" layoutY="507.0" onMouseClicked="#logIn_mouseCliked" prefHeight="55.0" prefWidth="397.0" style="-fx-background-color: linear-gradient(to right, #051937, #002767, #003399, #003ccc, #0b40fd);;" text="Login" textFill="WHITE">
          <font>
             <Font name="System Bold" size="28.0" />

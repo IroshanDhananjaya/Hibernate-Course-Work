@@ -1,8 +1,11 @@
 package entity;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Programme implements SuperEntity{
@@ -11,20 +14,22 @@ public class Programme implements SuperEntity{
     private String programme_name;
     private String duration;
     private String fee;
+    @OneToMany(mappedBy = "programme",cascade = CascadeType.ALL)
+    private List<ProgrammeRejistration> details;
 
 
     public Programme() {
     }
 
     public Programme(String programme_id) {
-        this.programme_id = programme_id;
+        this.setProgramme_id(programme_id);
     }
 
     public Programme(String programme_id, String programme_name, String duration, String fee) {
-        this.programme_id = programme_id;
-        this.programme_name = programme_name;
-        this.duration = duration;
-        this.fee = fee;
+        this.setProgramme_id(programme_id);
+        this.setProgramme_name(programme_name);
+        this.setDuration(duration);
+        this.setFee(fee);
     }
 
     public String getProgramme_id() {
@@ -63,12 +68,19 @@ public class Programme implements SuperEntity{
     @Override
     public String toString() {
         return "Programme{" +
-                "programme_id='" + programme_id + '\'' +
-                ", programme_name='" + programme_name + '\'' +
-                ", duration='" + duration + '\'' +
-                ", fee='" + fee + '\'' +
+                "programme_id='" + getProgramme_id() + '\'' +
+                ", programme_name='" + getProgramme_name() + '\'' +
+                ", duration='" + getDuration() + '\'' +
+                ", fee='" + getFee() + '\'' +
                 '}';
     }
 
 
+    public List<ProgrammeRejistration> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<ProgrammeRejistration> details) {
+        this.details = details;
+    }
 }

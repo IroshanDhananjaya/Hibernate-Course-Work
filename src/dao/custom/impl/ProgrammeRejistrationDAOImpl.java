@@ -2,6 +2,7 @@ package dao.custom.impl;
 
 import dao.custom.ProgrammeRejistrationDAO;
 import entity.ProgrammeRejistration;
+import entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -29,7 +30,14 @@ public class ProgrammeRejistrationDAOImpl implements ProgrammeRejistrationDAO {
 
     @Override
     public boolean delete(String s) throws Exception {
-        return false;
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
+        Session session=sessionFactory.openSession();
+        Transaction transaction=session.beginTransaction();
+        ProgrammeRejistration programmeRejistration=session.get(ProgrammeRejistration.class,Integer.parseInt(s));
+        session.delete(programmeRejistration);
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override

@@ -58,7 +58,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="393.0" layoutY="439.0" prefHeight="42.0" prefWidth="178.0" style="-fx-background-color: #FFB400;" text="Reset" textFill="WHITE">
+            <JFXButton layoutX="393.0" layoutY="439.0" onAction="#resetOnAction" prefHeight="42.0" prefWidth="178.0" style="-fx-background-color: #FFB400;" text="Reset" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>

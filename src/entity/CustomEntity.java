@@ -6,11 +6,19 @@ public class CustomEntity {
     private String studentAddress;
     private String gender;
     private String contact;
-    private String regFormNumber;
+    private int regFormNumber;
     private String regDate;
     private String programmeId;
+    private String programmeName;
 
     public CustomEntity() {
+    }
+
+    public CustomEntity(int regFormNumber, String regDate, String programmeId, String programmeName) {
+        this.regFormNumber = regFormNumber;
+        this.regDate = regDate;
+        this.programmeId = programmeId;
+        this.programmeName = programmeName;
     }
 
     public CustomEntity(String studentId, String studentName, String regDate) {
@@ -19,7 +27,7 @@ public class CustomEntity {
         this.regDate = regDate;
     }
 
-    public CustomEntity(String studentId, String studentName, String studentAddress, String gender, String contact, String regFormNumber, String regDate, String programmeId) {
+    public CustomEntity(String studentId, String studentName, String studentAddress, String gender, String contact, int regFormNumber, String regDate, String programmeId) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.studentAddress = studentAddress;
@@ -70,11 +78,11 @@ public class CustomEntity {
         this.contact = contact;
     }
 
-    public String getRegFormNumber() {
+    public int getRegFormNumber() {
         return regFormNumber;
     }
 
-    public void setRegFormNumber(String regFormNumber) {
+    public void setRegFormNumber(int regFormNumber) {
         this.regFormNumber = regFormNumber;
     }
 
@@ -106,5 +114,13 @@ public class CustomEntity {
                 ", regDate='" + regDate + '\'' +
                 ", programmeId='" + programmeId + '\'' +
                 '}';
+    }
+
+    public String getProgrammeName() {
+        return programmeName;
+    }
+
+    public void setProgrammeName(String programmeName) {
+        this.programmeName = programmeName;
     }
 }

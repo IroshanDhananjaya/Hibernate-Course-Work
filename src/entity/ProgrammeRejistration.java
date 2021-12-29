@@ -8,11 +8,11 @@ public class ProgrammeRejistration implements SuperEntity {
     private
     int regNumber;
     private String regDate;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "student_registerNumber",referencedColumnName = "student_registerNumber")
     private
     Student student;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "programme_id",referencedColumnName = "programme_id")
     private
     Programme programme;

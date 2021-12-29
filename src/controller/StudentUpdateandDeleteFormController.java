@@ -2,20 +2,25 @@ package controller;
 
 import bo.BOFactory;
 import bo.custom.impl.StudentDeleteandUpdateBOImpl;
+import com.jfoenix.controls.JFXButton;
 import dto.StudentDTO;
+import entity.CustomEntity;
 import entity.Student;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import view.tm.StudentandProgrammeDetailsTM;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 
 public class StudentUpdateandDeleteFormController {
     public AnchorPane studentUpdateAndDeleteContext;
@@ -24,6 +29,12 @@ public class StudentUpdateandDeleteFormController {
     public TextField txtContact;
     public ComboBox cmbStu_RejNumber;
     public TextField txtGender;
+    public TableView<CustomEntity>tblStudentProgrammeTable;
+    public TableColumn colRegId;
+    public TableColumn colProgrammeId;
+    public TableColumn colProgrammeName;
+    public TableColumn colRegDate;
+
     StudentDeleteandUpdateBOImpl studentDeleteandUpdateBO= BOFactory.getBOFactory().getBO(BOFactory.BoTypes.STUDENTDELETEANDUPDATE);
 
     public void initialize(){
@@ -33,6 +44,7 @@ public class StudentUpdateandDeleteFormController {
                 addListener((observable, oldValue, newValue) -> {
                     try {
                         setStudentDate((String) newValue);
+                        setStudentProgrammeTable((String) newValue);
                     } catch (SQLException throwables) {
                         throwables.printStackTrace();
                     } catch (ClassNotFoundException e) {
@@ -41,6 +53,10 @@ public class StudentUpdateandDeleteFormController {
                         e.printStackTrace();
                     }
                 });
+        colRegId.setCellValueFactory(new PropertyValueFactory<>("regFormNumber"));
+        colProgrammeId.setCellValueFactory(new PropertyValueFactory<>("programmeId"));
+        colProgrammeName.setCellValueFactory(new PropertyValueFactory<>("programmeName"));
+        colRegDate.setCellValueFactory(new PropertyValueFactory<>("regDate"));
 
     }
 
@@ -81,4 +97,24 @@ public class StudentUpdateandDeleteFormController {
             new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
         }
     }
+
+    public void btnRemoveCourseOnAction(ActionEvent actionEvent) throws Exception {
+        if(tblStudentProgrammeTable.getSelectionModel().getSelectedItem()!=null){
+            CustomEntity customEntity=tblStudentProgrammeTable.getSelectionModel().getSelectedItem();
+            if(studentDeleteandUpdateBO.removeProgrammeFromStudent(String.valueOf(customEntity.getRegFormNumber()))){
+                new Alert(Alert.AlertType.CONFIRMATION, "Do you wanna Delete it?").showAndWait();
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
+            }
+        }
+    }
+    private void setStudentProgrammeTable(String id) throws Exception {
+        ObservableList<CustomEntity> tmList = FXCollections.observableArrayList();
+        List<CustomEntity> all = studentDeleteandUpdateBO.loadAllStudentProgramme(id);
+        for (CustomEntity dto : all) {
+            tmList.add(dto);
+            tblStudentProgrammeTable.setItems(tmList);
+        }
+    }
+
 }

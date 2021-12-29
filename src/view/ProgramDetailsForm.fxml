@@ -21,14 +21,49 @@
                   </Label>
                </children>
             </Pane>
-            <TableView fx:id="tblProgramDetails" layoutX="28.0" layoutY="192.0" prefHeight="362.0" prefWidth="894.0">
+            <TableView fx:id="tblProgramDetails" layoutX="602.0" layoutY="27.0" prefHeight="527.0" prefWidth="699.0">
               <columns>
-                <TableColumn fx:id="colStudentID" prefWidth="285.0" text="Student ID" />
-                <TableColumn fx:id="colStudentName" prefWidth="255.0" text="Student Name" />
-                  <TableColumn fx:id="colRejisterDate" prefWidth="350.0" text="Rejister Date" />
+                <TableColumn fx:id="colStudentID" prefWidth="169.0" text="Student ID" />
+                <TableColumn fx:id="colStudentName" prefWidth="224.3333740234375" text="Student Name" />
+                  <TableColumn fx:id="colRejisterDate" prefWidth="303.66668701171875" text="Rejister Date" />
               </columns>
             </TableView>
-            <JFXComboBox fx:id="cmbPID" layoutX="608.0" layoutY="79.0" prefHeight="48.0" prefWidth="402.0" />
+            <JFXComboBox fx:id="cmbPID" layoutX="58.0" layoutY="127.0" prefHeight="44.0" prefWidth="502.0" />
+            <Label layoutX="56.0" layoutY="116.0" text="Select Programme">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="72.0" layoutY="251.0" text="Programme Name :-">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="335.0" text="Programme Duration :-">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="411.0" text="Programme Fee :-">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblProgrammeName" layoutX="288.0" layoutY="252.0" text="Programme Name ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblProgrammeDuration" layoutX="289.0" layoutY="336.0" text="Programme Duration">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblFee" layoutX="289.0" layoutY="413.0" text="Programme Fee">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </children>
 </AnchorPane>

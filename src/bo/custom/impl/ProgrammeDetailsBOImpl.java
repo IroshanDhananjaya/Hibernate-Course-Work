@@ -5,6 +5,7 @@ import dao.DAOFactory;
 import dao.custom.impl.ProgrammeDAOImpl;
 import dao.custom.impl.QueryDAOImpl;
 import entity.CustomEntity;
+import entity.Programme;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,5 +28,10 @@ public class ProgrammeDetailsBOImpl implements ProgrammeDetailsBO {
     @Override
     public List getProgrammeids() {
         return programmeDAO.getProgrammeIDs();
+    }
+
+    @Override
+    public Programme getProgrammeData(String id) throws Exception {
+        return programmeDAO.find(id);
     }
 }

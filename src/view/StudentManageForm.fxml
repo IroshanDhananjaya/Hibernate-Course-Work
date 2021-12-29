@@ -50,7 +50,7 @@
                   <Font name="System Bold" size="11.0" />
                </font>
             </Label>
-            <JFXButton layoutX="1020.0" layoutY="118.0" prefHeight="42.0" prefWidth="242.0" style="-fx-background-color: #ffa600;" text="Reset" textFill="WHITE">
+            <JFXButton layoutX="1020.0" layoutY="118.0" onAction="#resetOnAction" prefHeight="42.0" prefWidth="242.0" style="-fx-background-color: #ffa600;" text="Reset" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
